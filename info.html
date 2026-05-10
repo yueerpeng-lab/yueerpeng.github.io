@@ -136,15 +136,33 @@ footer.site-footer {
   margin-bottom: 1.2rem;
   animation: fadeUp 0.8s ease 0.1s both;
 }
+
+/* NAME & PROFILE PHOTO WRAPPER */
+.name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.6rem;
+  animation: fadeUp 0.8s ease 0.15s both;
+}
+.profile-photo {
+  /* 高度与名字两行文本的总高度严格对应 */
+  width: clamp(5.8rem, 10.5vw, 10rem);
+  height: clamp(5.8rem, 10.5vw, 10rem);
+  object-fit: cover;
+  border-radius: 8px; /* 轻微圆角，保留方形质感 */
+  flex-shrink: 0;
+  border: 1px solid var(--border-soft);
+}
 .info-name {
   font-family: 'Playfair Display', serif;
   font-size: clamp(3rem, 5.5vw, 5.2rem);
   line-height: 0.98; font-weight: 900;
   letter-spacing: -0.025em;
-  margin-bottom: 1.6rem;
-  animation: fadeUp 0.8s ease 0.15s both;
+  margin-bottom: 0;
 }
 .info-name em { font-style: italic; color: var(--accent); }
+
 .info-tagline {
   font-size: 1rem; color: var(--ink-mid);
   max-width: 38ch; line-height: 1.75;
@@ -373,6 +391,9 @@ footer.site-footer {
   .timeline-entry { grid-template-columns: 1fr; gap: 0.4rem; }
   .contact-row { grid-template-columns: 1fr; gap: 0.3rem; }
   .resume-strip { flex-direction: column; gap: 1.2rem; padding: 2.5rem 1.5rem; text-align: center; }
+  
+  /* Mobile tweak for name wrapper */
+  .name-wrapper { gap: 1rem; }
 }
   </style>
 </head>
@@ -388,12 +409,16 @@ footer.site-footer {
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="info-hero">
   <div class="info-hero-left">
     <div>
       <p class="info-eyebrow">04 · Personal Info</p>
-      <h1 class="info-name">Yueer<br>Peng <em>(Yuri)</em></h1>
+      
+      <div class="name-wrapper">
+        <img src="images/profile.png" alt="Yueer Peng" class="profile-photo" />
+        <h1 class="info-name">Yueer<br>Peng <em>(Yuri)</em></h1>
+      </div>
+
       <p class="info-tagline">
         Designer with a multi-disciplinary background spanning industrial design,
         design strategy, and B-end product design. Currently pursuing dual MA degrees
@@ -447,7 +472,6 @@ footer.site-footer {
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section class="info-section" id="education">
   <div class="info-section-left">
     <p class="section-num">01</p>
@@ -478,7 +502,6 @@ footer.site-footer {
   </div>
 </section>
 
-<!-- WORK EXPERIENCE -->
 <section class="info-section" id="experience">
   <div class="info-section-left">
     <p class="section-num">02</p>
@@ -502,7 +525,6 @@ footer.site-footer {
   </div>
 </section>
 
-<!-- PROJECT EXPERIENCE -->
 <section class="info-section" id="projects-experience">
   <div class="info-section-left">
     <p class="section-num">03</p>
@@ -556,7 +578,6 @@ footer.site-footer {
   </div>
 </section>
 
-<!-- CAPABILITIES -->
 <section class="info-section" id="capabilities">
   <div class="info-section-left">
     <p class="section-num">04</p>
@@ -582,7 +603,6 @@ footer.site-footer {
   </div>
 </section>
 
-<!-- SKILLS -->
 <section class="info-section" id="skills">
   <div class="info-section-left">
     <p class="section-num">05</p>
@@ -590,7 +610,7 @@ footer.site-footer {
   </div>
   <div class="chip-grid">
     <div class="chip-group">
-      <h4>Design & Prototyping</h4>
+      <h4>Design & Pro雾totyping</h4>
       <div class="chip-list">
         <span class="skill-chip">Figma</span>
         <span class="skill-chip">Adobe Illustrator</span>
@@ -641,7 +661,6 @@ footer.site-footer {
   </div>
 </section>
 
-<!-- AWARDS -->
 <section class="info-section" id="awards">
   <div class="info-section-left">
     <p class="section-num">06</p>
@@ -671,7 +690,6 @@ footer.site-footer {
   </div>
 </section>
 
-<!-- CTA STRIP -->
 <section class="resume-strip">
   <p class="resume-strip-text">Interested in working <em>together</em>?</p>
   <div class="resume-strip-actions">
